@@ -28,7 +28,7 @@ form.addEventListener('submit', function (e) {
   };
 
   // Envio usando seu Service ID e Template ID configurados
-  emailjs.send('service_dfz5feh', 'template_n8a61os', templateParams)
+  emailjs.send('service_dfz5feh', 'template_5xoxyve', templateParams)
     .then(() => {
       alert('Obrigado! Sua avaliação foi enviada com sucesso.');
       form.reset();
