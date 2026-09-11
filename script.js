@@ -1,5 +1,5 @@
-// Substitua "SUA_PUBLIC_KEY_AQUI" pela sua Public Key do EmailJS (Menu Account -> Public Key)
-emailjs.init"service_dfz5feh";
+// ATENÇÃO: Substitua "SUA_PUBLIC_KEY_AQUI" pela Public Key que fica em Account -> Public Key no EmailJS
+emailjs.init("tZo8RTzBfte0PFOmN");
 
 const form = document.getElementById('feedbackForm');
 const commentBox = document.getElementById('comment');
@@ -27,9 +27,8 @@ form.addEventListener('submit', function (e) {
     message: commentBox.value || 'Nenhum comentário enviado.'
   };
 
-  // Envio usando o seu Service ID configurado: service_dfz5feh
-  // Substitua "SEU_TEMPLATE_ID_AQUI" pelo ID do seu Template
-  emailjs.send('service_dfz5feh', "template_n8a61os", templateParams)
+  // Envio usando seu Service ID e Template ID configurados
+  emailjs.send('service_dfz5feh', 'template_n8a61os', templateParams)
     .then(() => {
       alert('Obrigado! Sua avaliação foi enviada com sucesso.');
       form.reset();
