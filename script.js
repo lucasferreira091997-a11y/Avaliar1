@@ -1,5 +1,5 @@
 // Substitua "SUA_PUBLIC_KEY_AQUI" pela sua Public Key do EmailJS (Menu Account -> Public Key)
-emailjs.init("service_dfz5feh");
+emailjs.init"service_dfz5feh";
 
 const form = document.getElementById('feedbackForm');
 const commentBox = document.getElementById('comment');
