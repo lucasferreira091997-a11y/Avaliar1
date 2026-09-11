@@ -1,4 +1,4 @@
-// ATENÇÃO: Substitua "SUA_PUBLIC_KEY_AQUI" pela Public Key que fica em Account -> Public Key no EmailJS
+// Inicialização com sua Public Key real
 emailjs.init("tZo8RTzBfte0PFOmN");
 
 const form = document.getElementById('feedbackForm');
@@ -27,7 +27,7 @@ form.addEventListener('submit', function (e) {
     message: commentBox.value || 'Nenhum comentário enviado.'
   };
 
-  // Envio usando seu Service ID e Template ID configurados
+  // Envio com o seu Service ID e seu Template ID atualizado (template_5xoxyve)
   emailjs.send('service_dfz5feh', 'template_5xoxyve', templateParams)
     .then(() => {
       alert('Obrigado! Sua avaliação foi enviada com sucesso.');
@@ -35,7 +35,7 @@ form.addEventListener('submit', function (e) {
       counter.textContent = '140';
     })
     .catch((error) => {
-      alert('Ocorreu um erro ao enviar sua avaliação. Verifique as chaves e tente novamente.');
+      alert('Ocorreu um erro ao enviar sua avaliação. Verifique as chaves no EmailJS e tente novamente.');
       console.error('Erro EmailJS:', error);
     })
     .finally(() => {

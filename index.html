@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avaliação de Experiência</title>
-  
-  <!-- Configurações do PWA -->
+
+  <!-- Configurações PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#ffffff">
   <link rel="apple-touch-icon" href="icon.png">
@@ -66,7 +66,7 @@
 
       <div class="comment-container">
         <label for="comment">Quer fazer um comentário? (opcional)</label>
-        <textarea id="comment" name="comment" maxlength="140" placeholder=""></textarea>
+        <textarea id="comment" name="comment" maxlength="140"></textarea>
         <div class="char-count"><span id="counter">140</span> caracteres</div>
       </div>
 
@@ -74,11 +74,11 @@
     </form>
   </div>
 
-  <!-- Biblioteca do EmailJS -->
+  <!-- SDK do EmailJS -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js"></script>
 
-  <!-- Registro do Service Worker -->
+  <!-- Service Worker para PWA -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
