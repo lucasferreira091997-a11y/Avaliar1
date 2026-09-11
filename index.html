@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avaliação de Experiência</title>
+  
+  <!-- Configurações do PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2>Avalie a experiência</h2>
+    <p class="subtitle">Como você avalia essa experiência</p>
+
+    <form id="feedbackForm">
+      
+      <div class="input-group">
+        <label for="name">Seu Nome</label>
+        <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Seu E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+      </div>
+
+      <div class="rating-container">
+        <label class="rating-option">
+          <input type="radio" name="rating" value="Muito ruim" required>
+          <span class="emoji">😡</span>
+          <span class="label">Muito ruim</span>
+        </label>
+
+        <label class="rating-option">
+          <input type="radio" name="rating" value="Ruim">
+          <span class="emoji">😢</span>
+          <span class="label">Ruim</span>
+        </label>
+
+        <label class="rating-option">
+          <input type="radio" name="rating" value="Regular">
+          <span class="emoji">😐</span>
+          <span class="label">Regular</span>
+        </label>
+
+        <label class="rating-option">
+          <input type="radio" name="rating" value="Bom">
+          <span class="emoji">🙂</span>
+          <span class="label">Bom</span>
+        </label>
+
+        <label class="rating-option">
+          <input type="radio" name="rating" value="Muito bom">
+          <span class="emoji">😄</span>
+          <span class="label">Muito bom</span>
+        </label>
+      </div>
+
+      <div class="comment-container">
+        <label for="comment">Quer fazer um comentário? (opcional)</label>
+        <textarea id="comment" name="comment" maxlength="140" placeholder=""></textarea>
+        <div class="char-count"><span id="counter">140</span> caracteres</div>
+      </div>
+
+      <button type="submit" id="submitBtn" class="btn">Enviar avaliação</button>
+    </form>
+  </div>
+
+  <!-- Biblioteca do EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Registro do Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(() => console.log('PWA registrado com sucesso!'))
+          .catch((err) => console.log('Erro ao registrar PWA:', err));
+      });
+    }
+  </script>
+</body>
+</html>

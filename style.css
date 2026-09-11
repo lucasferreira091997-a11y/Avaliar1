@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f5f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 520px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: #1c1e21;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #65676b;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  color: #65676b;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e4e6eb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus,
+textarea:focus {
+  border-color: #8a8d91;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.rating-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 8px;
+  width: 70px;
+}
+
+.rating-option input {
+  display: none;
+}
+
+.emoji {
+  font-size: 2rem;
+  filter: grayscale(80%);
+  transition: transform 0.2s, filter 0.2s;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: #65676b;
+  text-align: center;
+}
+
+.rating-option:hover .emoji {
+  transform: scale(1.15);
+  filter: grayscale(0%);
+}
+
+.rating-option input:checked + .emoji {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+.rating-option input:checked ~ .label {
+  color: #1c1e21;
+  font-weight: 600;
+}
+
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.comment-container label {
+  font-size: 0.85rem;
+  color: #65676b;
+}
+
+textarea {
+  width: 100%;
+  height: 80px;
+  padding: 12px;
+  border: 1px solid #e4e6eb;
+  border-radius: 8px;
+  resize: none;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.char-count {
+  font-size: 0.75rem;
+  color: #8a8d91;
+}
+
+.btn {
+  width: 100%;
+  background-color: #8c8c8c;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #6f6f6f;
+}
